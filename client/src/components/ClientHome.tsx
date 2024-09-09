@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Navigation from './Navigation'
+import Banner from './Banner'
 
 export default function ClientHome() {
   const [message, setMessage] = useState('')
@@ -13,8 +15,10 @@ export default function ClientHome() {
   }, [])
 
   return (
-    <div className="container mx-auto px-4">
-      <main className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col min-h-screen">
+      <Navigation/>
+      <Banner />
+      <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-4">
           서버로부터의 메시지: {message}
         </h1>
